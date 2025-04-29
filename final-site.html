@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ish - Sales Strategy for Founders</title>
+    <style>
+        /* Import fun fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+        
+        /* Base styles with updated colors */
+        :root {
+            --primary: #071E3D;       /* Darker navy blue */
+            --primary-light: #14395A; /* Slightly lighter navy */
+            --secondary: #A8D5BA;     /* Lighter pale green */
+            --accent: #FFC107;        /* Yellow */
+            --accent-blue: #5DADE2;   /* Light blue accent */
+            --light: #FFFFFF;         /* White */
+            --dark: #1A1A1A;          /* Almost black */
+            --neutral: #6C757D;       /* Gray */
+            --card-bg: #F5F9FC;       /* Very light blue for cards */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif; /* Updated base font */
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif; /* More playful heading font */
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        header {
+            background-color: var(--primary);
+            padding: 18px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.4rem;
+            font-weight: 800;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -1.5px;
+        }
+        
+        .logo span {
+            color: var(--accent); /* Changed to yellow accent */
+            font-style: italic;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--primary);
+            color: #fff;
+            padding: 140px 0 170px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.8rem;
+            line-height: 1.1;
+            color: #fff;
+            margin-bottom: 30px;
+        }
+        
+        .hero-text h1 span {
+            color: var(--accent); /* Changed to yellow */
+            font-weight: 900;
+            position: relative;
+            display: inline-block;
+        }
+        
+        /* Add underline animation to the hero span */
+        .hero-text h1 span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--accent-blue);
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+            z-index: -1;
+            opacity: 0.7;
+        }
+        
+        .hero-text:hover h1 span::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .hero-text p {
+            font-size: 1.4rem;
+            margin-bottom: 35px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent)); /* Gradient button */
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: rotate(45deg);
+            z-index: 1;
+            transition: all 0.5s;
+            opacity: 0;
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+            opacity: 0.3;
+        }
+        
+        /* Sections */
+        section {
+            padding: 120px 0;
+            position: relative;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .section-title h2 {
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 6px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-blue)); /* Yellow to blue gradient */
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 4px;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .feature {
+            text-align: center;
+            padding: 30px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 5px;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(90deg, var(--accent), var(--accent-blue)); /* Yellow to blue gradient */
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.5s ease-out;
+        }
+        
+        .feature:hover::before {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.2), rgba(255, 193, 7, 0.2)); /* Gradient background */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 40px;
+            color: var(--primary);
+            transition: all 0.3s;
+        }
+        
+        .feature:hover .feature-icon {
+            transform: scale(1.1) rotate(10deg);
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.4), rgba(255, 193, 7, 0.4)); /* Stronger gradient on hover */
+        }
+        
+        .feature h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light)); /* Gradient background */
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+        }
+        
+        .stats::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235DADE2' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .stats h2 {
+            font-size: 3.5rem;
+            margin-bottom: 50px;
+            color: white;
+            text-transform: uppercase;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-top: 40px;
+        }
+        
+        .stat-item {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px 20px;
+            border-radius: 15px;
+            border-bottom: 5px solid var(--accent); /* Changed to yellow */
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.05);
+            transform: rotate(45deg);
+            z-index: 0;
+            transition: all 0.5s;
+        }
+        
+        .stat-item:hover::before {
+            left: 100%;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-10px);
+            background-color: rgba(255, 255, 255, 0.1);
+            border-bottom-color: var(--accent-blue); /* Changes to blue on hover */
+        }
+        
+        .stat-item h3 {
+            font-size: 3.5rem;
+            color: var(--accent); /* Changed to yellow */
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item:hover h3 {
+            color: var(--accent-blue); /* Changes to blue on hover */
+        }
+        
+        .stat-item p {
+            font-size: 1.2rem;
+            line-height: 1.4;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .service-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 50px 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 1px solid rgba(93, 173, 226, 0.1);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.05), rgba(255, 193, 7, 0.05)); /* Light gradient overlay */
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .service-card:hover::after {
+            opacity: 1;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-color: var(--accent-blue);
+        }
+        
+        .service-card .icon {
+            display: inline-block;
+            width: 70px;
+            height: 70px;
+            margin-bottom: 15px;
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.2), rgba(255, 193, 7, 0.2)); /* Gradient background */
+            border-radius: 50%;
+            text-align: center;
+            line-height: 70px;
+            font-size: 28px;
+            color: var(--primary);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-card:hover .icon {
+            transform: scale(1.1) rotate(10deg);
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.4), rgba(255, 193, 7, 0.4)); /* Stronger gradient on hover */
+        }
+        
+        .service-card h3 {
+            color: var(--primary);
+            margin-top: 20px;
+            font-size: 1.7rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* JAZZED UP About Section */
+        #about {
+            background-color: var(--card-bg); /* Light blue background */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        #about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23A8D5BA' fill-opacity='0.1' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.2;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        /* Decorated box for the about text */
+        .about-text-container {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Accent elements */
+        .about-text-container::before {
+            content: '✨';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            font-size: 40px;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .about-text-container::after {
+            content: '💡';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 40px;
+            z-index: 1;
+            animation: float 6s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+        
+        .about-text h3 {
+            font-size: 2.4rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .about-text h3::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-blue), transparent); /* Yellow to blue gradient */
+            bottom: -5px;
+            left: 0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .about-text p {
+            font-size: 1.15rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .about-text p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 5px;
+            height: 70%;
+            background: linear-gradient(180deg, var(--accent), var(--accent-blue)); /* Yellow to blue gradient */
+            border-radius: 5px;
+        }
+        
+        /* Highlight important points */
+        .highlight {
+            background: linear-gradient(120deg, rgba(255, 193, 7, 0.2), rgba(93, 173, 226, 0.2)); /* Yellow to blue */
+            padding: 2px 5px;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+        
+        /* Contact Section */
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .contact-info h3::after {
+            content: '';
+            position: absolute;
+            width: 70%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-blue), transparent); /* Yellow to blue gradient */
+            bottom: -5px;
+            left: 0;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .contact-info p {
+            margin-bottom: 35px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .contact-method:hover {
+            transform: translateX(10px);
+            background-color: rgba(93, 173, 226, 0.05);
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.2), rgba(255, 193, 7, 0.2)); /* Gradient */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            color: var(--primary);
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .contact-method:hover .contact-icon {
+            transform: rotate(15deg) scale(1.1);
+            background: linear-gradient(135deg, rgba(93, 173, 226, 0.4), rgba(255, 193, 7, 0.4)); /* Stronger gradient */
+        }
+        
+        .contact-method h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary);
+        }
+        
+        .contact-method p {
+            margin-bottom: 0;
+            font-size: 1.1rem;
+            color: var(--neutral);
+        }
+        
+        .contact-form {
+            background-color: var(--card-bg);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        input, textarea, select {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #e1e1e1;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-family: 'Quicksand', sans-serif;
+            background-color: white;
+            transition: all 0.3s;
+        }
+        
+        input:focus, textarea:focus, select:focus {
+            border-color: var(--accent-blue);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(93, 173, 226, 0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light)); /* Gradient background */
+            color: #fff;
+            padding: 90px 0 30px;
+            position: relative;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-blue)); /* Yellow to blue gradient */
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: -1px;
+        }
+        
+        .footer-logo span {
+            color: var(--accent); /* Yellow */
+            font-style: italic;
+        }
+        
+        .footer-links h3 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 1.4rem;
+            position: relative;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+        
+        .footer-links h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent-blue)); /* Yellow to blue gradient */
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-bottom: 15px;
+            display: block;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding-left: 15px;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent); /* Changed to yellow */
+            transform: translateX(8px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-weight: 500;
+        }
+        
+        /* Simplified grid background for demo */
+        .geometric-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--primary);
+            overflow: hidden;
+        }
+        
+        .grid-dot {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background-color: rgba(93, 173, 226, 0.2);
+            border-radius: 50%;
+        }
+        
+        .grid-line {
+            position: absolute;
+            height: 0.3px;
+            background-color: rgba(93, 173, 226, 0.1);
+            transform-origin: 0 0;
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 3rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">The<span>Ish</span></a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section with Modified Background -->
+    <section class="hero">
+        <div class="geometric-grid" id="geometric-grid">
+            <!-- Simplified representation of the grid background -->
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>The only way to transition beyond founder led sales is with <span>The ISH</span>.</h1>
+                    <p>Building the system your initial sales hire needs to succeed.</p>
+                    <a href="#contact" class="btn">Start the journey ⬆️</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section>
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Startups Love Us</h2>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">📈</div>
+                    <h3>Faster Growth</h3>
+                    <p>Our proven frameworks help companies compress their growth timeline. Most clients see significant revenue growth within just 90 days of implementation.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Time Freedom</h3>
+                    <p>Founders regain 15-20 hours per week once their sales system is properly implemented and running.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💼</div>
+                    <h3>Better Economics</h3>
+                    <p>Our strategic hiring and onboarding approach yields substantially higher ROI on sales investments and dramatically reduces costly hiring mistakes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <h2>Our Impact By The Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years of sales leadership experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>6×</h3>
+                    <p>Sales leader</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Hired, onboarded and trained</p>
+                </div>
+                <div class="stat-item">
+                    <h3>20+</h3>
+                    <p>Satisfied founders</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Do</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">📊</div>
+                    <h3>Sales Transition Blueprint</h3>
+                    <p>Break free from founder-led sales with a custom roadmap designed to maintain momentum while building your sales machine.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">👥</div>
+                    <h3>Talent Acquisition Framework</h3>
+                    <p>Stop hiring in the dark. Our proven process helps you identify, attract, and select sales talent that fits your unique company DNA.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📈</div>
+                    <h3>Rapid Ramp Onboarding</h3>
+                    <p>Cut time-to-value in half with systematic onboarding that turns new hires into revenue producers faster than ever.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">📘</div>
+                    <h3>Sales Playbook Engineering</h3>
+                    <p>Transform your winning moves into a repeatable system that anyone can follow. No more reinventing the wheel with each hire.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">💰</div>
+                    <h3>Strategic Comp Design</h3>
+                    <p>Create compensation structures that motivate the right behaviors while keeping your burn rate sustainable. Includes proven goal-setting frameworks.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">👔</div>
+                    <h3>Leadership Acceleration</h3>
+                    <p>Whether you're still leading sales or promoting your first manager, learn the frameworks that turn good sellers into great leaders.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>The Story Behind The Ish</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text-container">
+                    <div class="about-text">
+                        <h3>We've Been There Before</h3>
+                        <p>The Ish specializes in that critical <span class="highlight">in-between stage</span> – where you've proven the model as a founder but can't be the only one selling anymore.</p>
+                        <p>We've guided <span class="highlight">dozens of $1M+ companies</span> through this exact transition. Our frameworks don't just transfer your expertise to new hires – they <span class="highlight">enhance and scale it</span>, creating selling systems that outperform founder-driven sales.</p>
+                        <p>This isn't academic theory – it's <span class="highlight">practical expertise</span> refined through countless implementations. We deliver actionable playbooks with hands-on guidance because we know even perfect strategies fail without proper execution.</p>
+                        <p>We understand the unique sales challenges at each growth stage and design solutions that <span class="highlight">scale with you</span> – whether you're at $1M or eyeing $10M+.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready To Scale?</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Let's Build Your Sales Machine</h3>
+                    <p>Ready to move beyond founder-led sales? We're here to help you build a scalable sales organization that drives consistent growth.</p>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">📧</div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>jake@initialsaleshire.com</p>
+                        </div>
+                    </div>
+                    
+
+                </div>
+                
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="revenue">Current Annual Revenue</label>
+                            <select id="revenue" name="revenue">
+                                <option>Under $1 million</option>
+                                <option>$1-2 million</option>
+                                <option>$2-5 million</option>
+                                <option>$5-10 million</option>
+                                <option>$10+ million</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">What's Your Biggest Sales Challenge?</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Start The Conversation ⬆️</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-logo">The<span>Ish</span></div>
+                    <p>Helping founders build sales organizations that actually work without sacrificing their sanity.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Sales Transition Blueprint</a></li>
+                        <li><a href="#services">Talent Acquisition Framework</a></li>
+                        <li><a href="#services">Rapid Ramp Onboarding</a></li>
+                        <li><a href="#services">Sales Playbook Engineering</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h3>Connect</h3>
+                    <ul>
+                        <li>jake@initialsaleshire.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 The Ish. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to create the simplified grid background -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('geometric-grid');
+            
+            // Create a simplified version of the grid background for demo purposes
+            function createSimplifiedGrid() {
+                // Create dots
+                for (let i = 0; i < 50; i++) {
+                    const dot = document.createElement('div');
+                    dot.className = 'grid-dot';
+                    dot.style.left = `${Math.random() * 100}%`;
+                    dot.style.top = `${Math.random() * 100}%`;
+                    grid.appendChild(dot);
+                }
+                
+                // Create some connections
+                const dots = grid.querySelectorAll('.grid-dot');
+                for (let i = 0; i < dots.length; i++) {
+                    for (let j = i + 1; j < dots.length; j++) {
+                        if (Math.random() > 0.95) {
+                            const dot1 = dots[i];
+                            const dot2 = dots[j];
+                            
+                            const dot1Rect = dot1.getBoundingClientRect();
+                            const dot2Rect = dot2.getBoundingClientRect();
+                            
+                            const dx = dot2Rect.left - dot1Rect.left;
+                            const dy = dot2Rect.top - dot1Rect.top;
+                            const distance = Math.sqrt(dx * dx + dy * dy);
+                            
+                            if (distance < 100) {
+                                const line = document.createElement('div');
+                                line.className = 'grid-line';
+                                
+                                const x1 = parseFloat(dot1.style.left) / 100 * grid.offsetWidth;
+                                const y1 = parseFloat(dot1.style.top) / 100 * grid.offsetHeight;
+                                const x2 = parseFloat(dot2.style.left) / 100 * grid.offsetWidth;
+                                const y2 = parseFloat(dot2.style.top) / 100 * grid.offsetHeight;
+                                
+                                const length = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+                                const angle = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
+                                
+                                line.style.width = `${length}px`;
+                                line.style.left = `${x1}px`;
+                                line.style.top = `${y1}px`;
+                                line.style.transform = `rotate(${angle}deg)`;
+                                
+                                grid.appendChild(line);
+                            }
+                        }
+                    }
+                }
+            }
+            
+            createSimplifiedGrid();
+        });
+    </script>
+</body>
+</html>
