@@ -1,42 +1,447 @@
----
-layout: default
-title: Resources - Initial Sales Hire
-permalink: /resources/
----
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resources - Initial Sales Hire</title>
-    <!-- Your existing CSS will be included via the layout -->
+    <title>Resources - The ISH</title>
+    <style>
+        /* Import fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+        
+        /* Base styles with website colors */
+        :root {
+            --primary: #071E3D;       /* Darker navy blue */
+            --primary-light: #14395A; /* Slightly lighter navy */
+            --accent: #FFC107;        /* Yellow */
+            --accent-blue: #5DADE2;   /* Light blue accent */
+            --light: #FFFFFF;         /* White */
+            --dark: #1A1A1A;          /* Almost black */
+            --neutral: #6C757D;       /* Gray */
+            --card-bg: #F5F9FC;       /* Very light blue for cards */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235DADE2' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .logo-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            letter-spacing: -1.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .the {
+            color: white;
+        }
+        
+        .ish {
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .content {
+            padding: 40px;
+            position: relative;
+        }
+        
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(7, 30, 61, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(7, 30, 61, 0.03) 1px, transparent 1px);
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            z-index: 1;
+            line-height: 1.2;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .resource-card {
+            background: linear-gradient(165deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(93, 173, 226, 0.1);
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+        }
+        
+        .resource-card h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .resource-link {
+            display: inline-block;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        
+        .resource-link:hover {
+            transform: translateX(5px);
+        }
+        
+        .resource-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+        
+        .resource-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 35px 40px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235DADE2' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact div {
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        
+        .cta {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .navigation a {
+            color: var(--primary);
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            position: relative;
+        }
+        
+        .navigation a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.3s;
+        }
+        
+        .navigation a:hover::after {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+        
+        .navigation a.active::after {
+            transform: scaleX(1);
+        }
+        
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                gap: 15px;
+            }
+            
+            .contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            
+            .tagline {
+                margin-top: 10px;
+            }
+            
+            .navigation {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .navigation a {
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <!-- Header will be included via layout -->
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-text">
+                    <span class="the">The</span><span class="ish">Ish</span>
+                </div>
+            </div>
+            <div class="tagline">TAKING SALES HIRES, HIGHER</div>
+        </div>
+        
+        <!-- Navigation Menu - You can add this to your site later -->
+        <div class="navigation">
+            <a href="/">Home</a>
+            <a href="/founder">Founder</a>
+            <a href="/resources" class="active">Resources</a>
+        </div>
         
         <div class="content">
             <div class="background-pattern"></div>
             <h1>Resources for Founders</h1>
             
             <div class="section">
-                <p>Browse our collection of guides, frameworks, and tools designed to help founders navigate the critical early hiring decisions that shape company growth.</p>
+                <p>Browse our collection of guides, frameworks, and tools designed to help founders navigate the critical hiring decisions that shape company growth.</p>
                 
-                <div class="grid-container">
-                    <!-- Resource Card 1: Sales Hiring Process -->
-                    <div class="service-box">
+                <div class="resource-grid">
+                    <div class="resource-card">
                         <h3>Building a Winning Sales Hiring Process</h3>
-                        <p>A comprehensive guide to avoiding the 6 biggest sales hiring mistakes and implementing a proven hiring system.</p>
-                        <a href="/resources/sales-hiring-process" class="resource-link">Read the Guide →</a>
+                        <p>A comprehensive guide to avoiding the 6 biggest sales hiring mistakes and implementing a proven hiring system that will save you $240K-480K in bad hire costs.</p>
+                        <p>Learn how to evaluate sales candidates effectively, design a process that tests real selling skills, and make offers that attract top talent.</p>
+                        <a href="/resources/sales-hiring-process.html" class="resource-link">Read the Guide →</a>
                     </div>
                     
-                    <!-- You can add more resource cards here as you create more content -->
+                    <!-- More resource cards can be added here as you create more content -->
                 </div>
             </div>
         </div>
         
-        <!-- Footer will be included via layout -->
+        <div class="footer">
+            <div class="footer-content">
+                <div class="cta">Ready to elevate your sales hiring?</div>
+                <div class="contact">
+                    <div>Jake@initialsaleshire.com</div>
+                    <div>908-208-9674</div>
+                    <div>www.initialsaleshire.com</div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
