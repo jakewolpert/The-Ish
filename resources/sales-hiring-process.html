@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Building a Winning Sales Hiring Process - The ISH</title>
+    <title>The ISH - Building a Winning Sales Hiring Process</title>
     <style>
         /* Import fonts */
         @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
@@ -172,16 +172,6 @@
             z-index: 1;
         }
         
-        h4 {
-            color: var(--accent-blue);
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
-        }
-        
         ul {
             margin-top: 5px;
             margin-bottom: 15px;
@@ -206,46 +196,7 @@
             z-index: 1;
         }
         
-        .navigation {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-        
-        .navigation a {
-            color: var(--primary);
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            position: relative;
-        }
-        
-        .navigation a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.3s;
-        }
-        
-        .navigation a:hover::after {
-            transform: scaleX(1);
-            transform-origin: left;
-        }
-        
-        .navigation a.active::after {
-            transform: scaleX(1);
-        }
-        
-        .mistake-box {
+        .highlight {
             background: linear-gradient(to right, rgba(93, 173, 226, 0.08), rgba(255, 193, 7, 0.04));
             border-left: 5px solid var(--accent);
             padding: 25px 30px;
@@ -257,100 +208,18 @@
             transition: transform 0.3s;
         }
         
-        .mistake-box:hover {
+        .highlight:hover {
             transform: translateY(-5px);
         }
         
-        .mistake-title {
-            color: var(--primary);
-            font-weight: 700;
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-        
-        .fix-title {
-            color: var(--accent-blue);
-            font-weight: 700;
-            border-top: 1px solid rgba(93, 173, 226, 0.2);
-            padding-top: 15px;
-            margin-top: 20px;
-            font-size: 1.2rem;
-        }
-        
-        .action-steps {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-        
-        .action-box {
-            background: linear-gradient(165deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(93, 173, 226, 0.1);
-        }
-        
-        .action-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        
-        .action-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
-        }
-        
-        .action-box h3 {
-            color: var(--primary);
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-weight: 700;
-            font-size: 1.3rem;
-        }
-        
-        .toolkit-items {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+        .two-column {
+            display: flex;
+            gap: 30px;
             margin-top: 30px;
         }
         
-        .toolkit-item {
-            background: linear-gradient(165deg, #ffffff 0%, #f8f9fa 100%);
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: 1px solid rgba(93, 173, 226, 0.1);
-        }
-        
-        .toolkit-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-        }
-        
-        .toolkit-item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 5px;
-            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+        .column {
+            flex: 1;
         }
         
         .results {
@@ -409,28 +278,6 @@
             font-size: 1.1rem;
         }
         
-        .back-to-resources {
-            display: inline-block;
-            color: var(--accent-blue);
-            text-decoration: none;
-            font-weight: 600;
-            margin-top: 40px;
-            position: relative;
-            transition: transform 0.3s;
-            padding-left: 25px;
-        }
-        
-        .back-to-resources:before {
-            content: '←';
-            position: absolute;
-            left: 0;
-            transition: transform 0.3s;
-        }
-        
-        .back-to-resources:hover {
-            transform: translateX(-5px);
-        }
-        
         .footer {
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
@@ -457,4 +304,492 @@
             z-index: 2;
         }
         
-        .con
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact div {
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        
+        .cta {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .service-box {
+            background: linear-gradient(165deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(93, 173, 226, 0.1);
+        }
+        
+        .service-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .service-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+        }
+        
+        .service-box h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .phase {
+            background: linear-gradient(to right, rgba(245, 249, 252, 0.9), rgba(245, 249, 252, 0.7));
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .phase:hover {
+            transform: translateY(-5px);
+        }
+        
+        .phase-title {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .phase-title::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+            border-radius: 50%;
+            margin-right: 12px;
+        }
+        
+        .action-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .action-box {
+            background: linear-gradient(165deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(93, 173, 226, 0.1);
+        }
+        
+        .action-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .action-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+        }
+        
+        .action-box h3 {
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .mistake-section {
+            margin-top: 40px;
+        }
+        
+        .mistake-box {
+            background: linear-gradient(to right, rgba(93, 173, 226, 0.08), rgba(255, 193, 7, 0.04));
+            border-left: 5px solid var(--accent);
+            padding: 25px 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .mistake-box:hover {
+            transform: translateY(-5px);
+        }
+        
+        .mistake-title {
+            color: var(--primary);
+            font-weight: 700;
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+        
+        .fix-title {
+            color: var(--accent-blue);
+            font-weight: 700;
+            border-top: 1px solid rgba(93, 173, 226, 0.2);
+            padding-top: 15px;
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .toolkit-items {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .toolkit-item {
+            background: linear-gradient(165deg, #ffffff 0%, #f8f9fa 100%);
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(93, 173, 226, 0.1);
+        }
+        
+        .toolkit-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+        
+        .toolkit-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+        }
+        
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                gap: 15px;
+            }
+            
+            .contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .two-column {
+                flex-direction: column;
+            }
+            
+            .grid-container, .action-steps, .toolkit-items {
+                grid-template-columns: 1fr;
+            }
+            
+            .results {
+                grid-template-columns: 1fr;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            
+            .tagline {
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-text">
+                    <span class="the">The</span><span class="ish">Ish</span>
+                </div>
+            </div>
+            <div class="tagline">TAKING SALES HIRES, HIGHER</div>
+        </div>
+        
+        <div class="content">
+            <div class="background-pattern"></div>
+            <h1>Building a Winning Sales Hiring Process</h1>
+            
+            <div class="section">
+                <h2>The Founder's Dilemma</h2>
+                <p>Your company is ready for its first dedicated sales hire. You've been handling sales yourself, but now you need someone who can focus exclusively on driving revenue while you manage the business. Making this transition is a pivotal moment that will determine your growth trajectory.</p>
+                <p>But hiring salespeople is notoriously difficult. You're trying to identify someone who can drive revenue, build relationships, and represent your company—all while they're actively selling themselves to you during the interview.</p>
+                <p><strong>The stakes are incredibly high:</strong> a bad sales hire typically costs 3-4x their annual salary when you factor in compensation, lost opportunities, damaged customer relationships, and the time you'll spend managing and ultimately replacing them. For a typical early-stage sales role, that's $240K-480K down the drain. Even worse? The opportunity cost of 6-9 months of lost momentum at a critical growth stage.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Start Here: Your First Three Actions</h2>
+                <p>Before diving into the comprehensive guide, here are the three highest-leverage actions you can take today to immediately improve your sales hiring process:</p>
+                
+                <div class="action-steps">
+                    <div class="action-box">
+                        <h3>1. Create your sales scorecard</h3>
+                        <p>Spend 30 minutes defining what success looks like in 3, 6, and 12 months (specific numbers, not vague goals).</p>
+                    </div>
+                    
+                    <div class="action-box">
+                        <h3>2. Develop 5 consistent interview questions</h3>
+                        <p>Create a short list of questions that every candidate will answer so you can make true comparisons rather than relying on gut feeling.</p>
+                    </div>
+                    
+                    <div class="action-box">
+                        <h3>3. Design one role-play scenario</h3>
+                        <p>Create a simple discovery call prompt based on your actual product that tests real selling skills, not just interview skills.</p>
+                    </div>
+                </div>
+                
+                <p>These three steps alone will put you ahead of 90% of founding teams hiring their first salespeople.</p>
+            </div>
+            
+            <div class="section">
+                <h2>Why Most Sales Hiring Processes Fail</h2>
+                <p>After working with dozens of founders, I've identified the six most common mistakes companies make when hiring sales talent. More importantly, I'll show you exactly how to fix each one.</p>
+                
+                <div class="mistake-section">
+                    <div class="mistake-box">
+                        <h3 class="mistake-title">Mistake #1: You Don't Know What You're Actually Looking For</h3>
+                        <p>Most job descriptions are vague wishlists: "looking for a motivated self-starter with 3-5 years experience." This tells candidates nothing about what success looks like in the role.</p>
+                        
+                        <h4 class="fix-title">The Fix: Create a Sales-Specific Scorecard</h4>
+                        <ul>
+                            <li><strong>Define specific outcomes, not just activities</strong> - List 3-5 specific targets this person needs to hit in their first 6-12 months. Example: "Generate $500K in new business by end of Q3" instead of "Drive new business growth".</li>
+                            
+                            <li><strong>Document your sales motion clearly</strong> - Map out your typical sales cycle length, outline the stakeholders typically involved, identify common objections and challenges.</li>
+                            
+                            <li><strong>Identify true non-negotiables (and keep them minimal)</strong> - Do they need specific industry experience? Technical knowledge requirements? Cultural alignment priorities? Pro tip: Keep this list to 3-5 items maximum.</li>
+                            
+                            <li><strong>Include anyone involved in the growth effort</strong> - Ask founders/executives who've been selling: "What makes selling our solution difficult?" and "What skills do you think will be most important for success in this role?"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mistake-box">
+                        <h3 class="mistake-title">Mistake #2: Your Interview Process Doesn't Test Real Sales Skills</h3>
+                        <p>Most interviews rely on resume reviews and generic questions about "your biggest sale." This tests interview skills, not sales skills.</p>
+                        
+                        <h4 class="fix-title">The Fix: Design a Sales-Specific Interview Process</h4>
+                        <ul>
+                            <li><strong>Create a structured interview script</strong> - Develop core questions that every candidate answers, use the exact same wording for key questions.</li>
+                            
+                            <li><strong>Create a sales-specific scoring rubric</strong> - Score 1-5 on key sales competencies: Discovery skills, Objection handling, Communication, Resilience, Closing instinct.</li>
+                            
+                            <li><strong>Make it a team effort - divide and conquer</strong> - Have each interviewer focus on different aspects to get comprehensive coverage. Discuss findings together - each perspective matters.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mistake-box">
+                        <h3 class="mistake-title">Mistake #3: You're Rushing the Hiring Process (Or Dragging It Out Too Long)</h3>
+                        <p>Desperation leads to bad decisions. When you need someone "yesterday," you're likely to overlook red flags and overvalue superficial traits. At the same time, a drawn-out process with unnecessary rounds of interviews will drive away great candidates.</p>
+                        
+                        <h4 class="fix-title">The Fix: Run an Efficient, Thorough Sales Interview Process</h4>
+                        <ul>
+                            <li><strong>Start with a 20-minute phone screen</strong> - Listen for how they build rapport quickly, note how they talk about past achievements, ask for specific metrics from previous roles.</li>
+                            
+                            <li><strong>First interview: The career deep-dive</strong> - Focus on their sales approach and methodology, ask about their deal process and how they've learned from failures.</li>
+                            
+                            <li><strong>Second interview: The practical assessment</strong> - Run your sales simulation or role play, include a current team member to play the customer, watch how they adapt to challenges.</li>
+                            
+                            <li><strong>Debrief immediately</strong> - Key questions: "In 6 months this person will be wildly successful because..." and "In 6 months, this person won't be at the company anymore because..."</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mistake-box">
+                        <h3 class="mistake-title">Mistake #4: You're Overvaluing Experience</h3>
+                        <p>Years of experience and past performance at another company are poor predictors of success in your specific selling environment.</p>
+                        
+                        <h4 class="fix-title">The Fix: Evaluate Adaptability and Coachability</h4>
+                        <ul>
+                            <li><strong>Test their ability to learn quickly</strong> - Give them a challenging task with limited information, observe how they ask questions to fill knowledge gaps.</li>
+                            
+                            <li><strong>Look for pattern recognition, not just domain knowledge</strong> - Ask: "What patterns have you noticed in successful deals?" and "How do you quickly identify which prospects are serious?"</li>
+                            
+                            <li><strong>Value learning agility over industry experience</strong> - Ask about the most challenging new skill they've had to learn, discuss how they've adapted to changing markets or products.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mistake-box">
+                        <h3 class="mistake-title">Mistake #5: Your Interviews Lack a Consistent Structure</h3>
+                        <p>Winging it during interviews creates a major problem: when each candidate faces different questions, you have no reliable way to compare them. Without structure, you'll default to hiring based on rapport and first impressions rather than actual ability to do the job.</p>
+                        
+                        <h4 class="fix-title">The Fix: Standardize Your Interview Questions and Evaluation</h4>
+                        <ul>
+                            <li><strong>Create a structured interview script</strong> - Develop core questions that every candidate answers, use the exact same wording for key questions.</li>
+                            
+                            <li><strong>Use a consistent scoring system</strong> - Rate each answer on the same scale (1-5), define what each score means before you start interviewing.</li>
+                            
+                            <li><strong>Compare responses to the same scenarios</strong> - Ask all candidates how they'd handle the same sales challenges, present identical objections during role plays.</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mistake-box">
+                        <h3 class="mistake-title">Mistake #6: Your Offer Doesn't Attract Top Talent</h3>
+                        <p>Sales compensation is complex, and great salespeople have options. A weak or confusing offer will send them elsewhere. The biggest compensation mistake? Thinking that "unlimited earning potential" or "high commission ceiling" will convince salespeople to accept below-market base salaries.</p>
+                        
+                        <h4 class="fix-title">The Fix: Create an Offer That Great Salespeople Can't Refuse</h4>
+                        <ul>
+                            <li><strong>Clear path to success</strong> - Transparent quota setting process, defined territory or account list, realistic ramp period.</li>
+                            
+                            <li><strong>Strong compensation</strong> - Competitive base salary, uncapped commission potential, accelerators for overperformance.</li>
+                            
+                            <li><strong>Growth opportunity</strong> - Clear advancement path, skill development support, management exposure.</li>
+                            
+                            <li><strong>Be honest about your company</strong> - Don't oversell or create a fantasy version of your workplace, transparency builds trust and prevents disappointment.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>The Sales Hiring Toolkit</h2>
+                <p>Creating a structured hiring process isn't just a theoretical exercise—it requires actual tools and templates that you can implement immediately. Without these concrete assets, your process will remain inconsistent and your team will default back to "winging it" the moment you're not looking.</p>
+                
+                <div class="toolkit-items">
+                    <div class="toolkit-item">
+                        <h3>Sales Job Scorecard Template</h3>
+                        <ul>
+                            <li>Target quota</li>
+                            <li>Expected activity levels</li>
+                            <li>Skills required</li>
+                            <li>Key performance indicators</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toolkit-item">
+                        <h3>Sales Interview Question Bank</h3>
+                        <ul>
+                            <li>Discovery skill questions: "How do you prepare for a first call?"</li>
+                            <li>Closing technique questions: "How do you know when to ask for the business?"</li>
+                            <li>Resilience questions: "Tell me about your biggest sales slump and how you recovered"</li>
+                            <li>Differentiation questions: "What is your competitive advantage?"</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="toolkit-item">
+                        <h3>Sales Role Play Scenarios</h3>
+                        <ul>
+                            <li>Discovery call prompt</li>
+                            <li>Objection handling scenarios</li>
+                            <li>Negotiation scenarios</li>
+                            <li>Email response exercises</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2>Proven Results</h2>
+                <p>Founders who implement a structured sales hiring process typically experience:</p>
+                
+                <div class="results">
+                    <div class="result-box">
+                        <h3>75%</h3>
+                        <p>Higher Success Rate</p>
+                        <p>Compared to traditional interview-only approaches</p>
+                    </div>
+                    
+                    <div class="result-box">
+                        <h3>40-60</h3>
+                        <p>Days</p>
+                        <p>Average time to full productivity for new sales hires</p>
+                    </div>
+                    
+                    <div class="result-box">
+                        <h3>90%</h3>
+                        <p>Retention</p>
+                        <p>After 12 months of employment</p>
+                    </div>
+                    
+                    <div class="result-box">
+                        <h3>2-3x</h3>
+                        <p>Pipeline Growth</p>
+                        <p>Within the first quarter after implementing this process</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div class="cta">Ready to build your sales hiring system?</div>
+                <div class="contact">
+                    <div>Jake@initialsaleshire.com</div>
+                    <div>908-208-9674</div>
+                    <div>www.initialsaleshire.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
