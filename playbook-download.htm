@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Playbook Builder - The ISH</title>
+    <style>
+        /* Import fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #071E3D;       /* Darker navy blue */
+            --primary-light: #14395A; /* Slightly lighter navy */
+            --accent: #FFC107;        /* Yellow */
+            --accent-blue: #5DADE2;   /* Light blue accent */
+            --light: #FFFFFF;         /* White */
+            --dark: #1A1A1A;          /* Almost black */
+            --neutral: #6C757D;       /* Gray */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            letter-spacing: -1.5px;
+        }
+        
+        .the {
+            color: white;
+        }
+        
+        .ish {
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto 50px auto;
+            padding: 40px;
+            background: linear-gradient(165deg, rgba(245, 249, 252, 0.7), rgba(245, 249, 252, 0.4));
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+        }
+        
+        h1 {
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid rgba(93, 173, 226, 0.3);
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
+        }
+        
+        button {
+            display: block;
+            width: 100%;
+            background: linear-gradient(135deg, var(--accent) 0%, #FFD54F 100%);
+            color: var(--primary);
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.2rem;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 30px;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+        }
+        
+        .preview-image {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        #success-message {
+            display: none;
+            background-color: #e8f5e9;
+            border: 1px solid #81c784;
+            color: #388e3c;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            
+            .form-container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-text">
+                <span class="the">The</span><span class="ish">Ish</span>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <h1>Get Your Sales Playbook Builder</h1>
+            <p>Enter your details below to receive our comprehensive Sales Playbook Builder - a step-by-step guide to creating a playbook your team will actually use.</p>
+            
+            <!-- Optional: Add a preview image -->
+            <img src="playbook-preview.jpg" alt="Sales Playbook Builder Preview" class="preview-image">
+            
+            <form id="download-form" action="https://formspree.io/f/YOURFORMID" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                
+                <button type="submit">Get the Sales Playbook Builder</button>
+            </form>
+            
+            <div id="success-message">
+                Thank you! Your playbook is on its way to your inbox.
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('download-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Submit the form data using fetch
+            fetch(this.action, {
+                method: this.method,
+                body: new FormData(this),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => {
+                if (response.ok) {
+                    // Hide the form
+                    document.getElementById('download-form').style.display = 'none';
+                    
+                    // Show success message
+                    document.getElementById('success-message').style.display = 'block';
+                    
+                    // Optional: Redirect to download or thank you page
+                    // setTimeout(function() {
+                    //     window.location.href = '/thank-you';
+                    // }, 3000);
+                } else {
+                    throw new Error('Form submission failed');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was a problem submitting your form. Please try again.');
+            });
+        });
+    </script>
+</body>
+</html>
