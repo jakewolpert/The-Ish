@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The ISH - The Founder Sales Bottleneck Assessment</title>
+    <meta name="description" content="Discover exactly where you're stuck in the founder sales trap and get a clear roadmap to break free. Take our free assessment to identify your bottleneck level.">
+    <style>
+        /* Import fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+        
+        /* Base styles with website colors */
+        :root {
+            --primary: #071E3D;       /* Darker navy blue */
+            --primary-light: #14395A; /* Slightly lighter navy */
+            --accent: #FFC107;        /* Yellow */
+            --accent-blue: #5DADE2;   /* Light blue accent */
+            --light: #FFFFFF;         /* White */
+            --dark: #1A1A1A;          /* Almost black */
+            --neutral: #6C757D;       /* Gray */
+            --card-bg: #F5F9FC;       /* Very light blue for cards */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -0.5px;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+            font-size: 1.05rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 30px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235DADE2' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .logo-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .logo-text {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            letter-spacing: -1.5px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .the {
+            color: white;
+        }
+        
+        .ish {
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content {
+            padding: 40px;
+            position: relative;
+        }
+        
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-size: 30px 30px;
+            background-image: 
+                linear-gradient(to right, rgba(7, 30, 61, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(7, 30, 61, 0.03) 1px, transparent 1px);
+            opacity: 0.3;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            z-index: 1;
+            line-height: 1.2;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 150px;
+            height: 5px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+            border-radius: 2px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-top: 35px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .story-section {
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .story-quote {
+            font-style: italic;
+            font-size: 1.1rem;
+            color: #e53e3e;
+            margin: 20px 0;
+            padding: 20px;
+            border-left: 4px solid var(--accent);
+            background: linear-gradient(to right, rgba(93, 173, 226, 0.08), rgba(255, 193, 7, 0.04));
+            border-radius: 0 8px 8px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .assessment-container {
+            background: linear-gradient(to right, rgba(245, 249, 252, 0.9), rgba(245, 249, 252, 0.7));
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #e2e8f0;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.5s ease;
+        }
+
+        .question {
+            margin-bottom: 30px;
+            padding: 25px;
+            background: white;
+            border: 2px solid rgba(93, 173, 226, 0.1);
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .question:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .question h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .option {
+            display: flex;
+            align-items: center;
+            padding: 12px 16px;
+            border: 2px solid rgba(93, 173, 226, 0.1);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: var(--card-bg);
+        }
+
+        .option:hover {
+            background: rgba(93, 173, 226, 0.05);
+            border-color: var(--accent-blue);
+        }
+
+        .option.selected {
+            background: linear-gradient(to right, rgba(93, 173, 226, 0.08), rgba(255, 193, 7, 0.04));
+            border-color: var(--accent);
+            color: var(--primary);
+        }
+
+        .option input[type="radio"] {
+            margin-right: 12px;
+            accent-color: var(--accent);
+        }
+
+        .btn {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: block;
+            margin: 30px auto;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(7, 30, 61, 0.3);
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results {
+            display: none;
+            background: linear-gradient(to right, rgba(245, 249, 252, 0.9), rgba(245, 249, 252, 0.7));
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-badge {
+            display: inline-block;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .level-4 { 
+            background: linear-gradient(135deg, #fed7d7, #fbb6ce); 
+            color: #c53030; 
+        }
+        .level-3 { 
+            background: linear-gradient(135deg, #feebc8, #fbd38d); 
+            color: #dd6b20; 
+        }
+        .level-2 { 
+            background: linear-gradient(135deg, #fefcbf, #f6e05e); 
+            color: #d69e2e; 
+        }
+        .level-1 { 
+            background: linear-gradient(135deg, #c6f6d5, #9ae6b4); 
+            color: #38a169; 
+        }
+        .level-0 { 
+            background: linear-gradient(135deg, var(--accent-blue), #90cdf4); 
+            color: var(--primary); 
+        }
+
+        .level-details {
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .level-details h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .level-details p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .symptoms {
+            background: linear-gradient(to right, rgba(93, 173, 226, 0.08), rgba(255, 193, 7, 0.04));
+            border-left: 5px solid var(--accent);
+            padding: 25px 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            margin: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .symptoms h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+
+        .symptoms ul {
+            margin-left: 20px;
+        }
+
+        .symptoms li {
+            margin-bottom: 8px;
+        }
+
+        .symptoms li::marker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .action-steps {
+            background: linear-gradient(to right, rgba(245, 249, 252, 0.9), rgba(245, 249, 252, 0.7));
+            border-radius: 12px;
+            padding: 30px;
+            margin: 25px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-steps::before {
+            content: "";
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: linear-gradient(90deg, var(--accent) 0%, var(--accent-blue) 100%);
+            border-radius: 50%;
+            margin-right: 12px;
+            position: absolute;
+            top: 35px;
+            left: 30px;
+        }
+
+        .action-steps h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+            margin-left: 25px;
+        }
+
+        .action-steps ul {
+            margin-left: 45px;
+        }
+
+        .action-steps li {
+            margin-bottom: 10px;
+        }
+
+        .action-steps li::marker {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .success-story {
+            background: linear-gradient(to right, rgba(93, 173, 226, 0.08), rgba(255, 193, 7, 0.04));
+            border-left: 5px solid var(--accent);
+            padding: 25px 30px;
+            border-radius: 0 8px 8px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            margin-top: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .success-story h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            text-align: center;
+            font-weight: 800;
+            font-size: 2rem;
+            color: var(--primary);
+            padding: 50px;
+            margin-top: 60px;
+            margin-bottom: 0;
+            position: relative;
+            background: linear-gradient(165deg, rgba(245, 249, 252, 0.7), rgba(245, 249, 252, 0.4));
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(93, 173, 226, 0.1);
+        }
+        
+        .cta-section span {
+            color: var(--accent);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .cta-section span::after {
+            content: '';
+            position: absolute;
+            bottom: 5px;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background-color: var(--accent-blue);
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .footer {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 35px 40px;
+            position: relative;
+            overflow: hidden;
+            margin-top: 40px;
+        }
+        
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235DADE2' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            margin-top: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .contact div {
+            white-space: nowrap;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        
+        .cta {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 2;
+            white-space: nowrap;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .content {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .footer-content {
+                gap: 15px;
+            }
+            
+            .contact {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 25px 20px;
+            }
+            
+            .tagline {
+                margin-top: 10px;
+            }
+
+            .assessment-container, .results {
+                padding: 25px;
+            }
+
+            .question {
+                padding: 20px;
+            }
+
+            .cta-section {
+                padding: 30px 20px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo-container">
+                <div class="logo-text">
+                    <span class="the">The</span><span class="ish">Ish</span>
+                </div>
+            </div>
+            <div class="tagline">TAKING SALES HIRES, HIGHER</div>
+        </div>
+        
+        <div class="content">
+            <div class="background-pattern"></div>
+            <h1>The Founder Sales Bottleneck Assessment</h1>
+            
+            <div class="story-section">
+                <p>Last month, I watched a $3M ARR company lose their biggest deal of the year.</p>
+                <p>Not because their product wasn't good enough. Not because the prospect chose a competitor.</p>
+                <p>Because it took three weeks to schedule a 30-minute call between the founder and the prospect. The founder insisted on being part of the final discussion, but his calendar was completely packed. Every time they found a slot, something "urgent" would come up.</p>
+                <div class="story-quote">
+                    "We've been trying to move forward for almost a month," the prospect finally said. "We can't wait any longer - we're going with [competitor] because they were able to meet with us this week."
+                </div>
+                <p>Here's the thing: this founder thought he was being strategic by staying involved in big deals. In reality, his packed schedule had become the biggest bottleneck in his own company's growth.</p>
+                <p><strong>Sound familiar?</strong></p>
+                <p>Most successful founders hit this wall between $1M-$5M ARR. The very skills that got you here are now holding you back. The question is: how deep are you in the bottleneck, and what's it costing you?</p>
+                <p>There's a clear path out. But first, you need to know exactly where you stand.</p>
+            </div>
+
+            <div class="assessment-container">
+                <h2>Discover Your Current Level</h2>
+                <p>Answer these 8 questions honestly to get personalized recommendations for breaking free from the founder sales trap:</p>
+                
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                
+                <form id="assessmentForm">
+                    <div class="question">
+                        <h3>1. What percentage of product demos do you personally attend?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="4">
+                                <span>80% or more - prospects specifically ask for me</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="3">
+                                <span>50-80% - I attend most important ones</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="2">
+                                <span>20-50% - I jump in when technical questions arise</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="1">
+                                <span>Less than 20% - mainly for strategic accounts</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="0">
+                                <span>Rarely or never - my team handles demos independently</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>2. Who typically closes your deals?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="4">
+                                <span>I close almost every deal personally</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="3">
+                                <span>My team warms up prospects, but I handle final negotiations</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="2">
+                                <span>My team closes most deals, but complex ones come to me</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="1">
+                                <span>My team closes deals, I only get involved for strategic accounts</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="0">
+                                <span>My team independently closes deals without my involvement</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>3. When complex technical or competitive questions arise, what happens?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="4">
+                                <span>The team always escalates these questions to me</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="3">
+                                <span>I handle most technical discussions personally</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="2">
+                                <span>My team handles basic questions, but I jump in for complex ones</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="1">
+                                <span>My team handles most questions independently</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="0">
+                                <span>My team confidently handles all technical and competitive questions</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>4. How do your key customer relationships work?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q4" value="4">
+                                <span>All key customers primarily have relationships with me personally</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="3">
+                                <span>I maintain most key customer relationships</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="2">
+                                <span>Mix of personal relationships and team relationships</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="1">
+                                <span>Most customers have relationships with my team members</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q4" value="0">
+                                <span>Customers have strong relationships with the company/team, not just me</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>5. What happens when you're unavailable (vacation, sick, busy with other priorities)?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q5" value="4">
+                                <span>Deals stall or fall apart without my involvement</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="3">
+                                <span>Sales progress slows significantly</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="2">
+                                <span>Some deals slow down, but team can handle most situations</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="1">
+                                <span>Team operates well, but occasionally needs my input</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q5" value="0">
+                                <span>Sales process continues smoothly without me</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>6. How are pricing decisions and negotiations handled?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q6" value="4">
+                                <span>All pricing exceptions and negotiations require my approval</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="3">
+                                <span>I handle most negotiations personally</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="2">
+                                <span>Team has some pricing authority, but larger deals come to me</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="1">
+                                <span>Team has clear pricing authority and guidelines</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q6" value="0">
+                                <span>Team independently handles pricing and negotiations within established frameworks</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>7. How often do customer issues or expansion conversations escalate to you?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q7" value="4">
+                                <span>Almost all customer issues and expansions come through me</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="3">
+                                <span>Most significant customer conversations involve me</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="2">
+                                <span>Team handles routine issues, escalates complex ones to me</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="1">
+                                <span>Team handles most customer issues and expansion conversations</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q7" value="0">
+                                <span>Team independently manages customer relationships and expansions</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <h3>8. How would you describe your current role in the sales process?</h3>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q8" value="4">
+                                <span>I'm essentially the senior salesperson with an expensive title</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="3">
+                                <span>I'm heavily involved in most deals as the closer</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="2">
+                                <span>I'm the knowledge keeper that the team depends on</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="1">
+                                <span>I'm involved strategically but team operates largely independently</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q8" value="0">
+                                <span>I focus on strategy and vision while the team drives revenue</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn" id="submitBtn" disabled>Get My Results</button>
+                </form>
+            </div>
+
+            <div class="results" id="results">
+                <div id="levelResult"></div>
+            </div>
+
+            <div class="cta-section">
+                Ready to break free from the sales bottleneck with <span>The Ish</span>?
+            </div>
+        </div>
+        
+        <div class="footer">
+            <div class="footer-content">
+                <div class="cta">Get personalized strategies to systematize your sales process</div>
+                <div class="contact">
+                    <div>Jake@initialsaleshire.com</div>
+                    <div>908-208-9674</div>
+                    <div>www.initialsaleshire.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('assessmentForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const results = document.getElementById('results');
+        const progressFill = document.getElementById('progressFill');
+        const questions = document.querySelectorAll('.question');
+        const totalQuestions = 8;
+
+        // Track progress
+        function updateProgress() {
+            const answered = Array.from(form.querySelectorAll('input[type="radio"]:checked')).length;
+            const progress = (answered / totalQuestions) * 100;
+            progressFill.style.width = progress + '%';
+            
+            submitBtn.disabled = answered < totalQuestions;
+        }
+
+        // Add click handlers for options
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const radio = this.querySelector('input[type="radio"]');
+                radio.checked = true;
+                
+                // Remove selected class from siblings
+                this.parentNode.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                
+                // Add selected class to clicked option
+                this.classList.add('selected');
+                
+                updateProgress();
+            });
+        });
+
+        // Handle form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Calculate score
+            let totalScore = 0;
+            for (let i = 1; i <= totalQuestions; i++) {
+                const value = parseInt(form.querySelector(`input[name="q${i}"]:checked`).value);
+                totalScore += value;
+            }
+            
+            const averageScore = Math.round(totalScore / totalQuestions);
+            displayResults(averageScore);
+        });
+
+        function displayResults(level) {
+            const levelData = {
+                4: {
+                    title: "Level 4: The Demo Dependency",
+                    class: "level-4",
+                    description: "You're not a CEO building a company. You're a senior salesperson with an expensive title.",
+                    symptoms: [
+                        "You're personally in 80%+ of product demos",
+                        "Prospects specifically ask for 'the founder'",
+                        "Deals stall when you're unavailable",
+                        "Your revenue is capped by your calendar"
+                    ],
+                    danger: "Your revenue is capped by your calendar. You can't scale beyond your personal capacity.",
+                    actions: [
+                        "Start recording your demos and creating a demo script library",
+                        "Identify your 3 most common demo scenarios and train your team on each",
+                        "Begin transitioning prospect expectations by introducing team members in demos",
+                        "Create a 'founder involvement criteria' - only demo for deals above $X or strategic accounts"
+                    ]
+                },
+                3: {
+                    title: "Level 3: The Closing Crutch", 
+                    class: "level-3",
+                    description: "You're not building a sales team. You're building sales assistants who can't operate independently.",
+                    symptoms: [
+                        "Your team 'warms up' prospects for you to close",
+                        "All negotiations flow through you",
+                        "Pricing exceptions require your approval",
+                        "Team depends on you for final conversations"
+                    ],
+                    danger: "Every deal requires your involvement. You're the bottleneck preventing your team from becoming true closers.",
+                    actions: [
+                        "Create clear pricing authority levels for your team",
+                        "Develop negotiation playbooks for common objections",
+                        "Shadow your closing conversations to identify transferable techniques",
+                        "Implement deal review sessions where team practices closing scenarios"
+                    ]
+                },
+                2: {
+                    title: "Level 2: The Knowledge Keeper",
+                    class: "level-2", 
+                    description: "You haven't systematized your expertise. Your knowledge is trapped in your head.",
+                    symptoms: [
+                        "Only you can handle complex technical questions",
+                        "Only you understand competitive positioning", 
+                        "Only you can articulate the vision clearly",
+                        "Team escalates difficult questions to you"
+                    ],
+                    danger: "Your knowledge is trapped in your head, making you irreplaceable but also making your company unscalable.",
+                    actions: [
+                        "Create comprehensive competitive battle cards",
+                        "Document your technical Q&A in a searchable knowledge base",
+                        "Record yourself handling complex questions for training material",
+                        "Assign team members to become specialists in different technical areas"
+                    ]
+                },
+                1: {
+                    title: "Level 1: The Relationship Monopoly",
+                    class: "level-1",
+                    description: "You've created a single point of failure. Customer relationships are too dependent on you personally.",
+                    symptoms: [
+                        "All key customer relationships belong to you personally",
+                        "Expansion conversations happen through you", 
+                        "Customer issues escalate directly to you",
+                        "Customers ask for you specifically"
+                    ],
+                    danger: "If you're hit by a bus, your revenue disappears with you. Customer relationships aren't transferable.",
+                    actions: [
+                        "Systematically introduce team members to key customers",
+                        "Create customer success playbooks for relationship management",
+                        "Implement customer health scoring to identify at-risk relationships",
+                        "Train team on expansion and upselling methodologies"
+                    ]
+                },
+                0: {
+                    title: "Level 0: The Holy Grail",
+                    class: "level-0",
+                    description: "This is what a scalable business looks like. Revenue happens independently of your personal involvement.",
+                    symptoms: [
+                        "Deals close without your involvement",
+                        "Your team handles objections, negotiations, and technical questions",
+                        "You only hear about deals when they hit your revenue dashboard",
+                        "Customers have relationships with your company, not just you"
+                    ],
+                    danger: "This isn't dangerous - this is the goal! You can focus on strategy, vision, and building the business.",
+                    actions: [
+                        "Continue optimizing and scaling your sales systems",
+                        "Focus on strategy, vision, and business development",
+                        "Invest in advanced sales enablement and automation",
+                        "Build predictable, repeatable revenue systems"
+                    ]
+                }
+            };
+
+            const data = levelData[level];
+            
+            const resultHTML = `
+                <div class="level-badge ${data.class}">
+                    Your Result: ${data.title}
+                </div>
+                
+                <div class="level-details">
+                    <h3>What This Means</h3>
+                    <p><strong>${data.description}</strong></p>
+                    
+                    <div class="symptoms">
+                        <h4>Signs You're at This Level:</h4>
+                        <ul>
+                            ${data.symptoms.map(symptom => `<li>${symptom}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <p><strong>Why this ${level === 0 ? 'is the goal' : 'is dangerous'}:</strong> ${data.danger}</p>
+                    
+                    <div class="action-steps">
+                        <h4>Your Next Steps to Level Up:</h4>
+                        <ul>
+                            ${data.actions.map(action => `<li>${action}</li>`).join('')}
+                        </ul>
+                    </div>
+                </div>
+                
+                ${level > 0 ? `
+                <div class="success-story">
+                    <h4>Success Story</h4>
+                    <p>The founder I mentioned in the story started at Level 4, just like many successful founders. Six months after implementing a systematic approach to sales enablement and team development, he reached Level 1 and is now targeting Level 0.</p>
+                    <p><strong>The result?</strong> He went from working 70-hour weeks to 45-hour weeks, and revenue is growing faster than ever.</p>
+                </div>
+                ` : ''}
+            `;
+            
+            document.getElementById('levelResult').innerHTML = resultHTML;
+            results.style.display = 'block';
+            results.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
